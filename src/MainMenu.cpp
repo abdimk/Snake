@@ -18,11 +18,12 @@ MainMenu::~MainMenu()
 
 void MainMenu::Init()
 {
-    m_context->m_assets->AddFont(MAIN_FONT, "utils/fonts/Pacifico-Regular.ttf");
+    m_context->m_assets->AddFont(MAIN_FONT, "utils/fonts/DMSans-Bold.ttf");
+    //m_context->m_assets->AddFont(MAIN_FONT, "NotoSerifEthiopic-VariableFont_wdth,wght.ttf");
 
     // Title
     m_gameTitle.setFont(m_context->m_assets->GetFont(MAIN_FONT));
-    m_gameTitle.setString("Snake Game");
+    m_gameTitle.setString("SNAKE");
     m_gameTitle.setOrigin(m_gameTitle.getLocalBounds().width / 2,
                          m_gameTitle.getLocalBounds().height / 2);
 
@@ -119,10 +120,12 @@ void MainMenu::Update(sf::Time deltaTime)
     if(m_isPlayButtonSelected)
     {
         m_playButton.setFillColor(sf::Color::Yellow);
+        m_exitButton.setFillColor(sf::Color::White);
     }
     else
     {
         m_exitButton.setFillColor(sf::Color::Yellow);
+        m_playButton.setFillColor(sf::Color::White);
 
     }
     if(m_isPlayButtonPressed)
@@ -139,7 +142,7 @@ void MainMenu::Update(sf::Time deltaTime)
 }
 void MainMenu::Draw()
 {
-    m_context->m_window->clear();
+    m_context->m_window->clear(sf::Color(0, 0, 52, 255));
     m_context->m_window->draw(m_gameTitle);
     m_context->m_window->draw(m_playButton);
     m_context->m_window->draw(m_exitButton);
