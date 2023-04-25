@@ -7,18 +7,18 @@ namespace Engine
 
     class State
     {
-    private:
 
     public:
-        Sate();
-        virtual ~State();
+        Sate(){};
+        virtual ~State(){};
         virtual void Init() = 0;
         virtual void ProcessInput() = 0;
-        virtual void Update(sf::Time deltaTime) = 0;
+        virtual void Update(sf::Time deltaTime) = 0; // the game runs on time same fps
         virtual void Draw() = 0;
 
-        virtual void Start(){};
         virtual void Pause(){};
+        virtual void Start(){};
+        
 
     };
 

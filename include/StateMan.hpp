@@ -4,7 +4,8 @@
 #include <memory>
 #include <State.hpp>
 
-namespace Engine{
+namespace Engine
+{
     class StateMan {
     private:
         std::stack<std::unique_ptr<State>> m_stateStack;
@@ -18,7 +19,7 @@ namespace Engine{
         StateMan();
         ~StateMan();
 
-        void Add(std::unique_ptr<State> toadd , bool replace = false);
+        void Add(std::unique_ptr<State> toAdd , bool replace = false);
         void PopCurrent();
         void ProcessStateChange();
         std::unique_ptr<State> &GetCurrent;

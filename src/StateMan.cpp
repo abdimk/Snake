@@ -5,14 +5,16 @@ Engine::StateMan::StateMan() : m_add(false),m_replace(false),m_remove(false)
 
 }
 
-Engine::StateMan::~StateMan() {
-
+Engine::StateMan::~StateMan()
+{
 }
 
 void Engine::StateMan:: Add(std::unique_ptr<State> toadd , bool replace)
 {
     m_add = true;
     m_newState = std::move(toAdd);
+
+    m_replace = replace;
 
 }
 
@@ -26,11 +28,12 @@ void Engine::StateMan::ProcessStateChange()
     if(m_remove && (!m_stateStack.empty()))
     {
         m_stateStack.pop();
-        if(!m_stateStack.empty()){
+        if(!m_stateStack.empty())
+        {
             m_stateStack.top() ->Start();
         }
 
-        m_remove = true;
+        m_remove = false;
     }
 
     if(m_add)
