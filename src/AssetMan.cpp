@@ -1,28 +1,29 @@
 #include "AssetMan.hpp"
 
-Engine::AssetMan::AssetMan() {
-
+Engine::AssetMan::AssetMan()
+{
 }
 
-Engine::AssetMan::~AssetMan() {
-
+Engine::AssetMan::~AssetMan()
+{
 }
 
-void Engine::AssetMan::AddTextures(int id, const std::string &filePath, bool wantRepeated = false)
+void Engine::AssetMan::AddTexture(int id, const std::string &filePath, bool wantRepeated = false)
 {
 
-    auto texture = std::make_unqiue<sf::Texture>();
+    auto texture = std::make_unique<sf::Texture>();
+
     if(texture->loadFromfile(filePath))
     {
-        texture->setRepeated()
+        texture->setRepeated(wantRepeated)
         m_textures[id] = std::move(texture);
     }
 
 }
 
-void Engin::AssetMan::AddFont(int id, const std::string &filePath)
+void Engine::AssetMan::AddFont(int id, const std::string &filePath)
 {
-    auto font = std::make_unqiue<sf::Font>();
+    auto font = std::make_unique<sf::Font>();
     if(font -> loadFromfile(filePath))
     {
         m_fonts[id] = std::move(font);
@@ -37,5 +38,5 @@ const sf::Texture &Engine::AssetMan::GetTexture(int id) const
 
 const sf::Font &Engine::AssetMan::GetFont() const
 {
-    return *(m_textures.at(id).get());
+    return *(m_fonts.at(id).get());
 }
