@@ -1,6 +1,6 @@
 #pragma once
 #include <map>
-#include<memory>
+#include <memory>
 #include <string>
 
 #include <SFML/Graphics/Texture.hpp>
@@ -18,7 +18,7 @@ namespace Engine
         ~AssetMan();
 
 
-        void AddTexture(int id, const std::string &filePath, bool wantRepeated);
+        void AddTexture(int id, const std::string &filePath, bool wantRepeated = false); // wantReapeated = false
         void AddFont(int id, const std::string &filePath);
 
         const sf::Texture &GetTexture(int id) const;
