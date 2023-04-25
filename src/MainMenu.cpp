@@ -3,8 +3,9 @@
 
 
 MainMenu::MainMenu(std::shared_ptr<Context> &context)
-    :m_context(context),m_isPlayButtonSelected(true),m_isPlayButtonPressed(false),
-     m_isEXitButtonPressed(false),m_isExitButtonSelected(false)
+    : m_context(context),m_isPlayButtonSelected(true),
+      m_isPlayButtonPressed(false),m_isExitButtonSelected(false),
+      m_isEXitButtonPressed(false)
 {
 
 }
@@ -21,7 +22,7 @@ void MainMenu::Init()
 
     // Title
     m_gameTitle.setFont(m_context->m_assets->GetFont(MAIN_FONT));
-    m_gameTitle.setString("Sanke Game");
+    m_gameTitle.setString("Snake Game");
     m_gameTitle.setOrigin(m_gameTitle.getLocalBounds().width / 2,
                          m_gameTitle.getLocalBounds().height / 2);
 
@@ -59,13 +60,81 @@ void MainMenu::ProcessInput()
     while (m_context->m_window->pollEvent(event))
     {
         if (event.type == sf::Event::Closed)
+        {
             m_context->m_window->close();
+        }
+        else if(event.type == sf::Event::KeyPressed)
+        {
+            switch (event.key.code) // event.key.code stores the key that was pressed
+            {
+                case sf::Keyboard::Up:
+                {
+                    if(!m_isPlayButtonSelected){
+                        m_isPlayButtonSelected = true;
+                        m_isExitButtonSelected = false;
+                    }
+                    break;
+                }
+                case sf::Keyboard::Down:
+                {
+                    if(!m_isExitButtonSelected)
+                    {
+                        m_isPlayButtonSelected = false;
+                        m_isExitButtonSelected = true;
+                    }
+                    break;
+                }
+                case sf::Keyboard::Return:
+                {
+                    m_isPlayButtonPressed = false;
+                    m_isEXitButtonPressed = false;
+
+                    if(m_isPlayButtonSelected)
+                    {
+                        m_isPlayButtonPressed = true;
+
+                    }
+                    else
+                    {
+                        m_isEXitButtonPressed = true;
+                    }
+                    break;
+                }
+            default:
+                {
+
+                    break;
+                }
+            }
+            
+        }
+            
+
     }
 
 
 }
 void MainMenu::Update(sf::Time deltaTime)
 {
+    if(m_isPlayButtonSelected)
+    {
+        m_playButton.setFillColor(sf::Color::Yellow);
+    }
+    else
+    {
+        m_exitButton.setFillColor(sf::Color::Yellow);
+
+    }
+    if(m_isPlayButtonPressed)
+    {
+
+
+    }
+    else if(m_isEXitButtonPressed)
+    {
+        m_context->m_window->close();
+    }
+
 
 }
 void MainMenu::Draw()
