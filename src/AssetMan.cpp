@@ -4,7 +4,7 @@ Engine::AssetMan::AssetMan() {
 
 }
 
-Engine::ssetMan::~AssetMan() {
+Engine::AssetMan::~AssetMan() {
 
 }
 
