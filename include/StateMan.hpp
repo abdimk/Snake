@@ -22,7 +22,7 @@ namespace Engine
         void Add(std::unique_ptr<State> toAdd , bool replace = false);
         void PopCurrent();
         void ProcessStateChange();
-        std::unique_ptr<State> &GetCurrent;
+        std::unique_ptr<State> &GetCurrent();
 
     };
 }

@@ -8,15 +8,15 @@
 
 struct Context
 {
-    std::unqiue_ptr<Engine::AssetMan> m_assets;
-    std::unqiue_ptr<Engine::StateMan> m_states;
-    std::unqiue_ptr<sf::RenderWindow> m_window;
+    std::unique_ptr<Engine::AssetMan> m_assets;
+    std::unique_ptr<Engine::StateMan> m_states;
+    std::unique_ptr<sf::RenderWindow> m_window;
 
     Context()
     {
-        m_assets = std::make_unique<Engine::AssetMan> ();
-        m_states = std::make_unique<Engine::StateMan> ();
-        m_window = std::make_unique<sf::RenderWindow> ();
+        m_assets = std::make_unique<Engine::AssetMan>();
+        m_states = std::make_unique<Engine::StateMan>();
+        m_window = std::make_unique<sf::RenderWindow>();
 
 
     }

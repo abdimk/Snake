@@ -9,7 +9,7 @@ namespace Engine
     {
 
     public:
-        Sate(){};
+        State(){};
         virtual ~State(){};
         virtual void Init() = 0;
         virtual void ProcessInput() = 0;

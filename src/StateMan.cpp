@@ -9,7 +9,7 @@ Engine::StateMan::~StateMan()
 {
 }
 
-void Engine::StateMan:: Add(std::unique_ptr<State> toadd , bool replace)
+void Engine::StateMan::Add(std::unique_ptr<State> toAdd, bool replace)
 {
     m_add = true;
     m_newState = std::move(toAdd);
@@ -18,7 +18,7 @@ void Engine::StateMan:: Add(std::unique_ptr<State> toadd , bool replace)
 
 }
 
-void Engine::StateMan:: PopCurrent()
+void Engine::StateMan::PopCurrent()
 {
     m_remove = true;
 
@@ -55,5 +55,4 @@ void Engine::StateMan::ProcessStateChange()
 std::unique_ptr<Engine::Sate> &Engine::StateMan::GetCurrent()
 {
     return m_stateStack.top()
-
 }

@@ -1,21 +1,21 @@
 #include "Game.hpp"
 #include <SFML/Graphics/CircleShape.hpp>
-#include <SFML/Graphics/Event.hpp>
+#include <SFML/Window/Event.hpp>
 
-Game::Game() 
+Game::Game() : m_context(std::make_shared<Context>())
 {
-    m_context -> m_window->create(sf::VideoMode(400, 400), "Snake!", sf::style::close);
+    m_context->m_window->create(sf::VideoMode(400, 400), "Snake!", sf::Style::Close);
 
 
 }
 
-Game::~Game() {
-
+Game::~Game()
+{
 }
 
 void Game::Run()
 {
-    sf::CircleShape shape(200.f);
+    sf::CircleShape shape(100.f);
     shape.setFillColor(sf::Color::Green);
 
     while (m_context->m_window->isOpen())
