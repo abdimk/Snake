@@ -24,6 +24,9 @@ void MainMenu::Init()
     // Title
     m_gameTitle.setFont(m_context->m_assets->GetFont(MAIN_FONT));
     m_gameTitle.setString("SNAKE");
+
+    // title color
+    m_gameTitle.setFillColor(sf::Color::Yellow);
     m_gameTitle.setOrigin(m_gameTitle.getLocalBounds().width / 2,
                          m_gameTitle.getLocalBounds().height / 2);
 
