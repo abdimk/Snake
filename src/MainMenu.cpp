@@ -18,12 +18,12 @@ MainMenu::~MainMenu()
 
 void MainMenu::Init()
 {
-    m_context->m_assets->AddFont(MAIN_FONT, "utils/fonts/DMSans-Bold.ttf");
+    m_context->m_assets->AddFont(MAIN_FONT, "utils/fonts/Orbitron-VariableFont_wght.ttf");
     //m_context->m_assets->AddFont(MAIN_FONT, "NotoSerifEthiopic-VariableFont_wdth,wght.ttf");
 
     // Title
     m_gameTitle.setFont(m_context->m_assets->GetFont(MAIN_FONT));
-    m_gameTitle.setString("SNAKE");
+    m_gameTitle.setString("snake Game");
 
     // title color
     m_gameTitle.setFillColor(sf::Color::Yellow);
@@ -133,6 +133,8 @@ void MainMenu::Update(sf::Time deltaTime)
     }
     if(m_isPlayButtonPressed)
     {
+        // To do
+        // Game play state
 
 
     }
