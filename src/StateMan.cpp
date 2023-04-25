@@ -52,7 +52,7 @@ void Engine::StateMan::ProcessStateChange()
     }
 
 }
-std::unique_ptr<Engine::Sate> &Engine::StateMan::GetCurrent()
+std::unique_ptr<Engine::State> &Engine::StateMan::GetCurrent()
 {
-    return m_stateStack.top()
+    return m_stateStack.top();
 }
