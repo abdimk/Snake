@@ -48,6 +48,10 @@ void GamePlay:: Init()
         // Display the food
         m_food.setTexture(m_context->m_assets->GetTexture(FOOD));
         m_food.setPosition(m_context->m_window->getSize().x / 2, m_context->m_window->getSize().y / 2);
+
+
+        // initalize the m_snake class of the init methoid
+        m_snake.Init(m_context->m_assets->GetTexture(SNAKE));
 }
 void GamePlay:: ProcessInput()
 {
@@ -76,6 +80,7 @@ void GamePlay:: Draw()
                 m_context->m_window->draw(wall);
         }
         m_context->m_window->draw(m_food);
+        m_context->m_window->draw(m_snake);
         m_context->m_window->display();
 }
 

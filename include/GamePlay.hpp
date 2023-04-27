@@ -6,6 +6,7 @@
 
 #include "State.hpp"
 #include "Game.hpp"
+#include "Snake.hpp"
 
 class GamePlay : public Engine::State
 {
@@ -17,6 +18,10 @@ private:
 
     //To do 
     // Added Snake
+    Snake m_snake;
+
+
+
     
 public:
     GamePlay(std::shared_ptr<Context> &context);
