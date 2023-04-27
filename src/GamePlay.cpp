@@ -22,7 +22,7 @@ void GamePlay:: Init()
         
         //setting them on the sprite
         m_grass.setTexture(m_context->m_assets->GetTexture(GRASS));
-        m_grass.setTextureRect(m_context->m_window->getviewport(m_context->m_window->getDefaultview()));
+        m_grass.setTextureRect(m_context->m_window->getViewPort(m_context->m_window->getDefaultView()));
         
 }
 void GamePlay:: ProcessInput()
