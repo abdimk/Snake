@@ -1,4 +1,5 @@
 #include "MainMenu.hpp"
+#include "GamePlay.hpp"
 #include <SFML/Window/Event.hpp>
 
 
@@ -135,6 +136,7 @@ void MainMenu::Update(sf::Time deltaTime)
     {
         // To do
         // Game play state
+        m_context->m_assets->Add(std::make_unique<GamePlay>(m_context), true);
 
 
     }
