@@ -33,7 +33,21 @@ void GamePlay:: Init()
 
 
         //set baundary for the walls
-        m_walls[0].setTextureRect({0, 0, 640, 16});
+        m_walls[0].setTextureRect({0, 0, m_context->m_window->getSize().x, 16});
+        m_walls[1].setTextureRect({0, 0, m_context->m_window->getSize().x, 16});
+        m_walls[1].setPosition(0, m_context->m_window->getSize().y - 16);
+
+
+
+        m_walls[2].setTextureRect({0, 0, 16, m_context->m_window->getSize().y});
+        m_walls[3].setTextureRect({0, 0, 16, m_context->m_window->getSize().y});
+        m_walls[3].setPosition(m_context->m_window->getSize().x - 16, 0);
+
+
+
+        // Display the food
+        m_food.setTexture(m_context->m_assets->GetTexture(FOOD));
+        m_food.setPosition(m_context->m_window->getSize().x / 2, m_context->m_window->getSize().y / 2);
 }
 void GamePlay:: ProcessInput()
 {
@@ -61,6 +75,7 @@ void GamePlay:: Draw()
         {
                 m_context->m_window->draw(wall);
         }
+        m_context->m_window->draw(m_food);
         m_context->m_window->display();
 }
 
