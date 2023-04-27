@@ -136,7 +136,7 @@ void MainMenu::Update(sf::Time deltaTime)
     {
         // To do
         // Game play state
-        m_context->m_assets->Add(std::make_unique<GamePlay>(m_context), true);
+        m_context->m_states->Add(std::make_unique<GamePlay>(m_context), true);
 
 
     }
