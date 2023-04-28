@@ -1,9 +1,16 @@
 #include "GamePlay.hpp"
 #include <SFML/Window/Event.hpp>
 
+#include <stdlib.h>
+#include <time.h>
+
+
 GamePlay::GamePlay(std::shared_ptr<Context> &context)
-        : m_context(context)
+        : m_context(context), 
+        m_snakeDirection({16.f, 0.f,}), 
+        m_elapsedTime(sf::Time::Zero)
 {
+        srand(time(nullptr));
 
 }
 
@@ -62,10 +69,59 @@ void GamePlay:: ProcessInput()
                 {
                         m_context->m_window->close();
                 }
+                else if(event.type == sf::Event::KeyPressed)
+                {
+                        switch (event.key.code)
+                        {
+                                case sf::Keyboard::Up :
+                                        m_snakeDirection = {0.f, -16.f};
+                                        break;
+                                case sf::Keyboard::Down :
+                                        m_snakeDirection = {0.f, 16.f};
+                                        break;
+                                case sf::Keyboard::Left :
+                                        m_snakeDirection = {-16.f, 0.f};
+                                        break;
+                                case sf::Keyboard::Right :
+                                        m_snakeDirection = {16.f, 0.f};
+                                        break;                                                                                                        
+                                
+                                default:
+                                        break;
+                        }
+
+                }
         }
 }
 void GamePlay:: Update(sf::Time deltaTime)
 {
+        m_elapsedTime += deltaTime;
+        if(m_elapsedTime.asSeconds() > 0.1)
+        {
+
+                bool isOnWall = false;
+
+                for(auto& wall : m_walls)
+                {
+                        if(m_snake.IsOn(wall))
+                        {
+                                // Add Game over right here
+
+                                break;
+                        }
+                }
+                
+                if(m_snake.IsOn(m_food))
+                {
+                        m_snake.Grow(m_snakeDirection);
+                }else
+                {
+                        m_snake.Move(m_snakeDirection);
+
+                }
+                m_elapsedTime = sf::Time::Zero;
+        }
+        
         
 }
 void GamePlay:: Draw()

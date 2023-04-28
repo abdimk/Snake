@@ -19,6 +19,8 @@ private:
     //To do 
     // Added Snake
     Snake m_snake;
+    sf::Vector2f m_snakeDirection;
+    sf::Time m_elapsedTime;
 
 
 
