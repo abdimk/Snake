@@ -114,7 +114,17 @@ void GamePlay:: Update(sf::Time deltaTime)
                 if(m_snake.IsOn(m_food))
                 {
                         m_snake.Grow(m_snakeDirection);
-                }else
+                        int x = 0, y = 0;
+                        
+                        //x = rand() % m_context->m_window-getSize().x;
+                        //y = rand() % m_context->m_window->getSize().y;
+                        
+                        x = std::clamp<int>(rand() % m_context->m_window->getSize().x, 16, m_context->m_window->getSize().x - 2 * 16);
+                        y = std::clamp<int>(rand() % m_context->m_window->getSize().y, 16, m_context->m_window->getSize().y - 2 * 16);
+
+                        m_food.setPosition(x, y);
+                }
+                else
                 {
                         m_snake.Move(m_snakeDirection);
 

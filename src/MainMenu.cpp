@@ -24,7 +24,7 @@ void MainMenu::Init()
 
     // Title
     m_gameTitle.setFont(m_context->m_assets->GetFont(MAIN_FONT));
-    m_gameTitle.setString("snake Game");
+    m_gameTitle.setString("snake 2077");
 
     // title color
     m_gameTitle.setFillColor(sf::Color::Yellow);
