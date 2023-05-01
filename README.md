@@ -18,9 +18,10 @@
 		</a>
 	</div>
 </div>
-```
-Simple and Fast Multimedia Library is a cross-platform software development library designed to provide a simple application programming interface to various multimedia components in computers.
-```
+
+---
+
+<p>Simple and Fast Multimedia Library is a cross-platform software development library designed to provide a simple application programming interface to various multimedia components in computers.</p>
 ---
 
 A C++ SFML Simple Snake game with custom game engine [Snake](https://github.com/abdimk/Snake) script runtime.
