@@ -20,15 +20,13 @@
 </div>
 
 ---
-
+## what is SFML
 <p>Simple and Fast Multimedia Library is a cross-platform software development library designed to provide a simple application programming interface to various multimedia components in computers.</p>
 ---
+## Project Overview
+A C++ SFML Simple Snake game with custom game engine [Snake](https://github.com/abdimk/Snake) 
 
-A C++ SFML Simple Snake game with custom game engine [Snake](https://github.com/abdimk/Snake) script runtime.
 
-Write and run scripts, similar to runtimes for other languages such as [Node](https://nodejs.org) / [Deno](https://deno.land), or [Luvit](https://luvit.io) for vanilla Lua.
-
-Lune provides fully asynchronous APIs wherever possible, and is built in Rust 🦀 for optimal safety and correctness.
 
 ## Features
 
