@@ -26,9 +26,9 @@
 
 
 ## Project Overview
-<p>
-A C++ SFML Simple Snake game with custom game engine [Snake](https://github.com/abdimk/Snake) 
-</p>
+
+A C++ SFML Simple Snake game with custom game engine [Snake](https://github.com/abdimk/Snake) .
+
 
 
 ## Features
