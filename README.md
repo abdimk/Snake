@@ -33,16 +33,14 @@ A C++ SFML Simple Snake game with custom game engine [Snake](https://github.com/
 
 ## Features
 
--   🌙 A strictly minimal but powerful interface that is easy to read and remember, just like Luau itself
--   🧰 Fully featured APIs for the filesystem, networking, stdio, all included in the small (~3mb) executable
--   📚 World-class documentation, on the web _or_ directly in your editor, no network connection necessary
--   🏡 A familiar scripting environment for Roblox developers, with an included 1-to-1 task scheduler port
--   ✏️ Optional built-in library for manipulating Roblox place & model files, and their instances
+-   🌙 Simple light weight game engine with the concept of stack data structure over the SFML library
+-   🧰 Collusion detection 
+-   📚 custome state and texture
+-   🏡 Customizable layout
+-   ✏️ Optional built-in library for manipulating SFML 
 
 ## Non-goals
-
--   Making scripts short and terse - proper autocomplete / intellisense make scripting using Lune just as quick, and readability is important
--   Running full Roblox game scripts outside of Roblox - there is some compatibility, but Lune is meant for different purposes
+....
 
 ## Where do I start?
 
